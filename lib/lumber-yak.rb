@@ -1,6 +1,7 @@
 
 require 'active_support'
 require 'rails/railtie'
+require 'lograge'
 require 'lograge/formatter/noformat'
 
 
@@ -20,7 +21,7 @@ module LumberYak
     config.lumberyak = ActiveSupport::OrderedOptions.new
     config.lumberyak.enabled = false
     config.lumberyak.configure_lograge = true
-    config.lumberyak.configure_logger = true
+    config.lumberyak.configure_logger = false
     config.lumberyak.log_location = ""
     config.lumberyak.log_tags = nil
 
@@ -40,7 +41,7 @@ module LumberYak
 
   def setup_lograge
     if config.configure_lograge
-      application.configure do |config|
+      Rails.application.configure do
         config.lograge.enabled = true
         config.lograge.formatter = Lograge::Formatters::NoFormat.new
       end
