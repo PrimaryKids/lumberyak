@@ -1,0 +1,17 @@
+
+language: ruby
+
+# Install Ruby dependencies. See the `cache` section
+# on how these dependencies are cached between builds.
+install:
+  - bundle install --path vendor/bundle
+
+# Instruct Travis to cache a copy of the bundler installation directory between builds.
+cache:
+  bundler: true
+
+# Execution of tests
+script:
+  - bundle exec rspec spec
+  - bundle exec rubocop
+

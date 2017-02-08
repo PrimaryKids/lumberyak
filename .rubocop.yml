@@ -1,0 +1,79 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - vendor/**/*
+
+AssignmentInCondition:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Style/CaseIndentation:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/IndentAssignment:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+Style/LeadingCommentSpace:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+StringLiterals:
+  Enabled: false
+  EnforcedStyle: double_quotes
+
+StringLiteralsInInterpolation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 78
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/ClassLength:
+  Max: 285
+
+Metrics/CyclomaticComplexity:
+  Max: 13
+
+Metrics/LineLength:
+  Max: 408
+
+Metrics/MethodLength:
+  Max: 73
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+# Offense count: 1
+Metrics/AbcSize:
+  Max: 79
+
+# Offense count: 36
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Enabled: false
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: SupportedStyles, WordRegex.
+# SupportedStyles: percent, brackets
+Style/WordArray:
+  EnforcedStyle: percent
+  MinSize: 5
