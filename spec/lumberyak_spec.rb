@@ -33,18 +33,6 @@ describe LumberYak do
   let(:log_tags) { nil }
 
   describe "configure_lograge" do
-    context "when true" do
-      let(:lograge_config) do
-        { enabled: false }
-      end
-      let(:enable_lograge?) do
-        true
-      end
-      it "enables lograge" do
-        expect(Lograge).to receive(:setup).with(application_config)
-        expect(subject).to change { application_config.config.lograge[:enabled] }.to(true)
-      end
-    end
 
     context "when false" do
       let(:enable_lograge?) do

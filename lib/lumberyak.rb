@@ -37,7 +37,7 @@ module LumberYak
 
   def setup_lograge
     if config.configure_lograge
-      application.configure do |config|
+      application.configure do
         config.lograge.enabled = true
         config.lograge.formatter = Lograge::Formatters::NoFormat.new
       end
