@@ -5,9 +5,9 @@ require 'lograge'
 require 'lograge/railtie'
 require 'lograge/formatter/noformat'
 
-
 module LumberYak
   module_function
+
   mattr_accessor :application
 
   def setup(app)
@@ -29,7 +29,6 @@ module LumberYak
     end
   end
 
-
   def setup_logger
     new_logger = ActiveSupport::TaggedLogging.new(application.config.logger)
     application.config.logger = new_logger
@@ -47,9 +46,7 @@ module LumberYak
   end
 
   def setup_logtags
-    if config.log_tags
-      application.config.log_tags = config.log_tags
-    end
+    application.config.log_tags = config.log_tags if config.log_tags
   end
 
   def enable_json_logging
@@ -61,8 +58,3 @@ module LumberYak
     application.config.lumberyak
   end
 end
-
-
-
-
-

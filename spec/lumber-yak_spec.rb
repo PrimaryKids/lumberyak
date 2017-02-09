@@ -9,12 +9,10 @@ RSpec.configure do |config|
   end
 end
 
-
 describe LumberYak do
-
   subject { -> { LumberYak.setup(application_config) } }
   let(:application_config) do
-    config = ActiveSupport::OrderedOptions.new.tap do |config|
+    config_set = ActiveSupport::OrderedOptions.new.tap do |config|
       config.lumberyak = ActiveSupport::OrderedOptions.new
       config.lumberyak.configure_lograge = enable_lograge?
       config.lumberyak.log_location = "/tmp/logs"
@@ -24,8 +22,8 @@ describe LumberYak do
 
       config.logger = ActiveSupport::Logger.new("/dev/null")
     end
-    app_config = double(config: config)
-    allow(app_config).to receive(:configure).and_yield(config)
+    app_config = double(config: config_set)
+    allow(app_config).to receive(:configure).and_yield(config_set)
     allow(Rails).to receive(:logger=)
     app_config
   end
@@ -35,14 +33,13 @@ describe LumberYak do
   let(:log_tags) { nil }
 
   describe "configure_lograge" do
-
     context "when true" do
-      let(:lograge_config) {
+      let(:lograge_config) do
         { enabled: false }
-      }
-      let(:enable_lograge?) {
+      end
+      let(:enable_lograge?) do
         true
-      }
+      end
       it "enables lograge" do
         expect(Lograge).to receive(:setup).with(application_config)
         expect(subject).to change { application_config.config.lograge[:enabled] }.to(true)
@@ -50,12 +47,12 @@ describe LumberYak do
     end
 
     context "when false" do
-      let(:enable_lograge?) {
+      let(:enable_lograge?) do
         false
-      }
-      let(:lograge_config) {
+      end
+      let(:lograge_config) do
         { enabled: false }
-      }
+      end
       it "doesn't touch lograge" do
         expect(subject).to_not change { application_config.config.lograge }
       end
