@@ -1,0 +1,396 @@
+AllCops:
+  TargetRubyVersion: 2.2
+  Exclude:
+    - db/schema.rb
+    - db/migrate/**/*.rb
+    - node_modules/**/*
+    - vendor/**/*
+    - lib/generators/primary_index_migration/templates/primary_index_migration.rb
+
+AssignmentInCondition:
+  Enabled: false
+
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Lint/HandleExceptions:
+  Enabled: false
+
+Style/CaseIndentation:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
+Style/IndentAssignment:
+  Enabled: false
+
+Style/Alias:
+  Enabled: false
+
+Style/LeadingCommentSpace:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+StringLiterals:
+  Enabled: false
+  EnforcedStyle: double_quotes
+
+StringLiteralsInInterpolation:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 78
+
+Metrics/BlockNesting:
+  Max: 4
+
+Metrics/ClassLength:
+  Max: 285
+
+Metrics/CyclomaticComplexity:
+  Max: 13
+
+Metrics/LineLength:
+  Max: 408
+
+Metrics/MethodLength:
+  Max: 73
+
+Metrics/PerceivedComplexity:
+  Max: 15
+
+Style/RescueModifier:
+  Exclude:
+    - 'app/serializers/spree/product_serializer.rb'
+
+Style/MethodMissing:
+  Exclude:
+    - 'lib/primary/fastly.rb'
+    - 'lib/primary/fastly_service.rb'
+
+# ignored on purpose due to borrowing code from base postgresql adapter
+Style/EmptyLinesAroundModuleBody:
+  Exclude:
+    - 'lib/active_record/connection_adapters/primary_postgresql_adapter.rb'
+
+# Offense count: 13
+# Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist.
+# NamePrefix: is_, has_, have_
+# NamePrefixBlacklist: is_, has_, have_
+# NameWhitelist: is_a?
+Style/PredicateName:
+  Exclude:
+    - 'spec/**/*'
+    - 'app/helpers/application_helper.rb'
+    - 'app/models/primary/bundle_price_calculator/basic.rb'
+    - 'app/models/spree/order_decorator.rb'
+    - 'app/models/spree/stock/quantifier_decorator.rb'
+    - 'app/models/spree/user_decorator.rb'
+    - 'app/models/spree/variant_decorator.rb'
+    - 'app/serializers/spree/product_serializer.rb'
+    - 'app/services/primary/partial_shipment_service.rb'
+    - 'db/updates/assign_product_image_types.rb'
+    - 'lib/primary/utils/fosdick/fosdick_missing_report_order.rb'
+#
+# Offense count: 14
+Lint/RescueException:
+  Exclude:
+    - 'app/controllers/primary/checkout_controller.rb'
+    - 'app/jobs/primary/post_order_job.rb'
+    - 'app/jobs/primary/post_shipment_job.rb'
+    - 'app/jobs/primary/sailthru/create_user_job.rb'
+    - 'app/models/spree/order_decorator.rb'
+    - 'db/updates/update_product_descriptions.rb'
+    - 'db/updates/update_related_variants.rb'
+    - 'lib/primary/utils/sailthru_cart.rb'
+    - 'lib/spree/core/controller_helpers/order_decorator.rb'
+
+# Offense count: 7
+Lint/AmbiguousOperator:
+  Exclude:
+    - 'app/models/primary/pack.rb'
+    - 'app/models/spree/shipment_decorator.rb'
+    - 'app/serializers/spree/product_serializer.rb'
+    - 'app/services/primary/partial_shipment_service.rb'
+    - 'db/seeds/9_variant_models.rb'
+
+# Offense count: 3
+# Cop supports --auto-correct.
+# Configuration parameters: AlignWith, SupportedStyles, AutoCorrect.
+# SupportedStyles: keyword, variable, start_of_line
+Lint/EndAlignment:
+  Exclude:
+    - 'app/controllers/primary/products_controller.rb'
+    - 'app/models/primary/store_credit.rb'
+    - 'lib/primary/utils/feature_flags/feature_group.rb'
+
+# Offense count: 1
+Lint/IneffectiveAccessModifier:
+  Exclude:
+    - 'lib/primary/utils/fosdick/fosdick_missing_report_order.rb'
+
+# Offense count: 3
+Lint/NestedMethodDefinition:
+  Exclude:
+    - 'app/models/primary/pack.rb'
+    - 'app/models/spree/stock_item_decorator.rb'
+
+# Offense count: 4
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'app/controllers/primary/api/referrals_controller.rb'
+    - 'db/updates/create_product_and_variants.rb'
+
+
+# Offense count: 2
+Lint/ShadowingOuterLocalVariable:
+  Exclude:
+    - 'app/models/primary/payment_method/store_credit.rb'
+    - 'app/services/primary/partial_shipment_service.rb'
+
+# Offense count: 1
+Lint/UnderscorePrefixedVariableName:
+  Exclude:
+    - 'app/models/spree/promotion/rules/new_customer_promo_item.rb'
+
+# Offense count: 1
+Lint/UnreachableCode:
+  Exclude:
+    - 'app/jobs/primary/curl_job.rb'
+
+# Offense count: 1
+# Configuration parameters: ContextCreatingMethods.
+Lint/UselessAccessModifier:
+  Exclude:
+    - 'app/models/spree/product_decorator.rb'
+
+# Offense count: 20
+Lint/UselessAssignment:
+  Exclude:
+    - 'app/jobs/primary/create_skus_job.rb'
+    - 'app/jobs/primary/sailthru/purchase_job.rb'
+    - 'app/mailers/spree/order_mailer_decorator.rb'
+    - 'app/models/primary/job_posting.rb'
+    - 'app/models/spree/calculator/flat_rate_decorator.rb'
+    - 'app/models/spree/product_decorator.rb'
+    - 'app/models/spree/reimbursement_type/store_credit.rb'
+    - 'app/models/spree/user_decorator.rb'
+    - 'app/services/primary/create_skus_service.rb'
+    - 'app/services/primary/imgix_service.rb'
+    - 'db/seeds/10_promotions.rb'
+    - 'db/seeds/1_option_values.rb'
+    - 'db/updates/create_product_and_variants.rb'
+    - 'db/updates/update_related_variants.rb'
+
+# Offense count: 1
+Metrics/AbcSize:
+  Max: 79
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Performance/RedundantMatch:
+  Exclude:
+    - 'lib/primary/utils/gulp_helper.rb'
+
+# Offense count: 1
+Style/AccessorMethodName:
+  Exclude:
+    - 'app/helpers/primary/og_helper.rb'
+
+# Offense count: 6
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: nested, compact
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/models/primary/bundle_price_calculator/base.rb'
+    - 'app/models/primary/bundle_price_calculator/basic.rb'
+    - 'app/models/primary/payment_method/amazon_marketplace_payment.rb'
+    - 'app/models/primary/payment_method/store_credit.rb'
+    - 'app/models/spree/reimbursement_type/store_credit.rb'
+    - 'config/initializers/sass.rb'
+
+# Offense count: 4
+Style/ClassVars:
+  Exclude:
+    - 'app/services/primary/sailthru_service.rb'
+    - 'db/seeds/10_promotions.rb'
+    - 'db/updates/create_podcast_host_codes.rb'
+    - 'db/updates/create_podcast_listener_codes.rb'
+
+# Offense count: 4
+Style/DoubleNegation:
+  Exclude:
+    - 'app/models/spree/user_decorator.rb'
+    - 'app/serializers/spree/option_value_serializer.rb'
+    - 'app/serializers/spree/product_serializer.rb'
+    - 'lib/primary/utils/feature_flags/feature_flag.rb'
+
+# Offense count: 36
+# Configuration parameters: MinBodyLength.
+Style/GuardClause:
+  Enabled: false
+
+# Offense count: 6
+Style/IdenticalConditionalBranches:
+  Exclude:
+    - 'app/models/spree/promotion/rules/new_customer_promo_item.rb'
+    - 'app/services/primary/inventory_update_service.rb'
+    - 'app/services/primary/rollover_variant_mapping_service.rb'
+
+# Offense count: 3
+Style/IfInsideElse:
+  Exclude:
+    - 'app/models/spree/coupon_decorator.rb'
+    - 'app/models/spree/product_decorator.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: line_count_dependent, lambda, literal
+Style/Lambda:
+  Exclude:
+    - 'app/models/primary/job_category.rb'
+
+# Offense count: 2
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: snake_case, camelCase
+Style/MethodName:
+  Exclude:
+    - 'app/reports/sales_by_product_report.rb'
+    - 'app/reports/sales_orders_report.rb'
+
+# Offense count: 4
+Style/MultilineBlockChain:
+  Exclude:
+    - 'app/jobs/primary/verify_imgix_urls_job.rb'
+    - 'app/services/primary/channel_advisor_service.rb'
+    - 'app/services/primary/partial_shipment_service.rb'
+    - 'db/seeds.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/NestedModifier:
+  Exclude:
+    - 'app/models/spree/order_decorator.rb'
+
+
+# Offense count: 5
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, AllowInnerSlashes.
+# SupportedStyles: slashes, percent_r, mixed
+Style/RegexpLiteral:
+  Exclude:
+    - 'config/sitemap.rb'
+    - 'db/seeds.rb'
+    - 'lib/primary/utils/gulp_helper.rb'
+    - 'spec/rails_helper.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: AllowAsExpressionSeparator.
+Style/Semicolon:
+  Exclude:
+    - 'app/jobs/primary/create_skus_job.rb'
+
+# Offense count: 2
+# Configuration parameters: Methods.
+# Methods: {"reduce"=>["a", "e"]}, {"inject"=>["a", "e"]}
+Style/SingleLineBlockParams:
+  Exclude:
+    - 'app/models/primary/bundle_price_calculator/basic.rb'
+    - 'app/serializers/primary/pack_serializer.rb'
+
+# Offense count: 3
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: snake_case, camelCase
+Style/VariableName:
+  Exclude:
+    - 'app/services/primary/rollover_variant_mapping_service.rb'
+    - 'lib/primary/utils/image_type_handlers/lifestyle_gendered.rb'
+
+
+# Offense count: 4
+# Cop supports --auto-correct.
+Style/AlignArray:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, SingleLineConditionsOnly.
+# SupportedStyles: assign_to_condition, assign_inside_condition
+Style/ConditionalAssignment:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+Style/EmptyLines:
+  Exclude:
+    - 'db/updates/create_unisex_taxonomy_structure.rb'
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: empty_lines, no_empty_lines
+Style/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/updates/create_unisex_taxonomy_structure.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
+Style/ExtraSpacing:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: Width.
+Style/IndentationWidth:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+Style/Not:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/PreferredHashMethods:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: IgnoredMethods.
+# IgnoredMethods: respond_to, define_method
+Style/SymbolProc:
+  Exclude:
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 4
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: snake_case, camelCase
+Style/VariableName:
+  Exclude:
+    - 'app/services/primary/rollover_variant_mapping_service.rb'
+    - 'lib/primary/utils/image_type_handlers/lifestyle_gendered.rb'
+    - 'db/updates/unisex_update.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: SupportedStyles, WordRegex.
+# SupportedStyles: percent, brackets
+Style/WordArray:
+  EnforcedStyle: percent
+  MinSize: 5
