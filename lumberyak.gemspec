@@ -1,11 +1,11 @@
-require './lib/lumber-yak/version'
+require './lib/lumberyak/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'lumber-yak'
+  s.name        = 'lumberyak'
   s.version     = LumberYak::VERSION
   s.authors     = ['Mark Roddy']
   s.email       = ['mroddy@primary.com']
-  s.homepage    = 'https://github.com/PrimaryKids/lumber-yak'
+  s.homepage    = 'https://github.com/PrimaryKids/lumberyak'
   s.summary     = "Structured Logging for Rails Applications"
   s.description = "LumberYak enables structured logging via JSON for any Rails application"
   s.license     = 'Apache'

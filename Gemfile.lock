@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lumber-yak (0.1.0)
+    lumberyak (0.1.0)
       actionpack (>= 4, < 5.1)
       activesupport (>= 4, < 5.1)
       lograge
@@ -106,7 +106,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack (= 4.2.6)
   activerecord (= 4.2.6)
-  lumber-yak!
+  lumberyak!
   rspec
   rubocop (= 0.43.0)
 

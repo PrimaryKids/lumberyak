@@ -1,5 +1,5 @@
 
-require 'lumber-yak'
+require 'lumberyak'
 
 # Need to disable verification of partial doubles so we can
 # set the logger on the Rails module.
