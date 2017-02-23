@@ -20,7 +20,7 @@ describe LumberYak do
 
       config.lograge = ActiveSupport::OrderedOptions.new(lograge_config)
 
-      config.logger = ActiveSupport::Logger.new("/dev/null")
+      config.logger = logger
     end
     app_config = double(config: config_set)
     allow(app_config).to receive(:configure).and_yield(config_set)
@@ -28,6 +28,7 @@ describe LumberYak do
     app_config
   end
 
+  let(:logger) { ActiveSupport::Logger.new("/dev/null") }
   let(:enable_lograge?) { false }
   let(:lograge_config) { {} }
   let(:log_tags) { nil }
@@ -59,6 +60,14 @@ describe LumberYak do
         app = application_config
         LumberYak.setup(app)
         expect(app.config.logger).to respond_to(:tagged)
+      end
+
+      describe "with a nil logger" do
+        let(:logger) { nil }
+        it "does not override a logger" do
+          LumberYak.setup(application_config)
+          expect(ActiveSupport::TaggedLogging).not_to receive(:new)
+        end
       end
     end
 
