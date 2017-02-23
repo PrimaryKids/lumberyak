@@ -1,6 +1,10 @@
 
 language: ruby
 
+rvm: 
+  - 2.2
+  - 2.1
+
 # Install Ruby dependencies. See the `cache` section
 # on how these dependencies are cached between builds.
 install:
