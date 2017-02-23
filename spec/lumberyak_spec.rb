@@ -33,7 +33,6 @@ describe LumberYak do
   let(:log_tags) { nil }
 
   describe "configure_lograge" do
-
     context "when false" do
       let(:enable_lograge?) do
         false
