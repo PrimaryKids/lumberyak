@@ -30,9 +30,11 @@ module LumberYak
   end
 
   def setup_logger
-    new_logger = ActiveSupport::TaggedLogging.new(application.config.logger)
-    application.config.logger = new_logger
-    Rails.logger = new_logger
+    if application.config.logger
+      new_logger = ActiveSupport::TaggedLogging.new(application.config.logger)
+      application.config.logger = new_logger
+      Rails.logger = new_logger
+    end
   end
 
   def setup_lograge
