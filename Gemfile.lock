@@ -4,7 +4,7 @@ PATH
     lumberyak (0.1.0)
       actionpack (>= 4, < 5.1)
       activesupport (>= 4, < 5.1)
-      lograge
+      lograge (~> 0.4)
       railties (>= 4, < 5.1)
 
 GEM
@@ -107,7 +107,7 @@ DEPENDENCIES
   actionpack (= 4.2.6)
   activerecord (= 4.2.6)
   lumberyak!
-  rspec
+  rspec (~> 3)
   rubocop (= 0.43.0)
 
 BUNDLED WITH
