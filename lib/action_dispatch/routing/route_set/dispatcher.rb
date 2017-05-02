@@ -9,7 +9,7 @@
 module DispatcherExtensions
   def dispatch(controller, action, env)
     Rails.logger.tagged({ controller: controller.to_s, action: action.to_s }) do
-      super()
+      super
     end
   end
 end
