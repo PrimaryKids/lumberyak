@@ -1,4 +1,5 @@
 
+require 'action_dispatch'
 require 'active_support'
 require 'rails/railtie'
 require 'lograge'
@@ -49,6 +50,9 @@ module LumberYak
 
   def setup_logtags
     application.config.log_tags = config.log_tags if config.log_tags
+
+    # require our dispatcher monkey patch to enable controller/action tags
+    require 'action_dispatch/routing/route_set/dispatcher.rb'
   end
 
   def enable_json_logging

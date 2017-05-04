@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lumberyak (0.1.0)
+    lumberyak (0.1.1)
       actionpack (>= 4, < 5.1)
       activesupport (>= 4, < 5.1)
       lograge (~> 0.4)
