@@ -114,3 +114,43 @@ end
 #   "forced_error: true
 # }
 ```
+
+## `config.log_tags`
+The Rails TaggedLogger can optionally use a configuration setting named `log_tags`. This setting is a list that contains either strings for literal values, symbols naming functions on the request objects whose return value you'd wish to include, or a proc whose return value will be included.  For instance, for the following setting:
+
+```ruby
+    config.log_tags = [
+      "my logs rock",
+      :uuid,
+      proc do |request|
+        request.session.id
+      end
+    ]
+```
+
+This would generate logs that look like:
+`[my logs rock] [29adec3c2] [39dab3f0] Processing by HomeController#index as HTML`
+
+However, we can rewrite this to use LumberYak's support for hashes to rewrite our tags:
+
+```ruby
+    config.log_tags = [
+      proc do |request|
+        {
+          my_logs_what: "my logs rock",
+          request_id: request.uuid,
+          session_id: request.session.id
+        }
+      end
+    ]
+```
+
+Then our logs will look like the following:
+```json
+{
+  "my_logs_what": "my logs rock",
+  "request_id": "29adec3c2",
+  "session_id": "39dab3f0",
+  "message": "Processing by HomeController#index as HTML"
+}
+```
