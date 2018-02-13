@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
 
   s.files = `git ls-files lib`.split("\n")
 
-  s.add_development_dependency 'rspec', '~> 3'
-  s.add_development_dependency 'rubocop', '0.43.0'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rubocop', '0.49.0'
 
-  s.add_runtime_dependency 'lograge', '~> 0.4'
+  s.add_runtime_dependency 'lograge'
   s.add_runtime_dependency 'activesupport', '>= 4', '< 5.1'
   s.add_runtime_dependency 'actionpack',    '>= 4', '< 5.1'
   s.add_runtime_dependency 'railties',      '>= 4', '< 5.1'
