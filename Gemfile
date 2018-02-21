@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
-  gem 'actionpack', '4.2.6'
-  gem 'activerecord', '4.2.6'
+  gem 'actionpack', '4.2.7.1'
+  gem 'activerecord', '4.2.7.1'
+  gem 'railties', '4.2.7.1'
 end
