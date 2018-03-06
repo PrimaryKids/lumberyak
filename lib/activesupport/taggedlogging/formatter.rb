@@ -28,7 +28,7 @@ module ActiveSupport
         else
           data['message'] = message
         end
-        data['timestamp'] = timestamp.iso8601
+        data['timestamp'] = timestamp.iso8601(6)
 
         data.merge!(user_defined_attributes)
 
