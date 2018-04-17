@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lumberyak (0.1.0)
+    lumberyak (0.1.2)
       actionpack (>= 4, < 5.1)
       activesupport (>= 4, < 5.1)
       lograge
@@ -40,17 +40,18 @@ GEM
     ast (2.4.0)
     builder (3.2.3)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     diff-lcs (1.3)
     erubis (2.7.0)
     i18n (0.9.4)
       concurrent-ruby (~> 1.0)
     json (1.8.6)
-    lograge (0.4.1)
-      actionpack (>= 4, < 5.1)
-      activesupport (>= 4, < 5.1)
-      railties (>= 4, < 5.1)
-    loofah (2.2.0)
+    lograge (0.10.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
+    loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mini_portile2 (2.3.0)
@@ -80,6 +81,8 @@ GEM
     rainbow (2.2.2)
       rake
     rake (12.3.0)
+    request_store (1.4.1)
+      rack (>= 1.4)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -113,10 +116,11 @@ PLATFORMS
 DEPENDENCIES
   actionpack (= 4.2.7.1)
   activerecord (= 4.2.7.1)
+  loofah (~> 2.2.1)
   lumberyak!
   railties (= 4.2.7.1)
   rspec
   rubocop (= 0.49.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.1
