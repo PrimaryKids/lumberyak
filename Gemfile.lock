@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lumberyak (0.1.2)
+    lumberyak (0.1.4)
       actionpack (>= 4, < 5.1)
       activesupport (>= 4, < 5.1)
       lograge
@@ -71,8 +71,8 @@ GEM
       activesupport (>= 4.2.0, < 5.0)
       nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.3)
-      loofah (~> 2.0)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
     railties (4.2.7.1)
       actionpack (= 4.2.7.1)
       activesupport (= 4.2.7.1)
@@ -118,6 +118,7 @@ DEPENDENCIES
   activerecord (= 4.2.7.1)
   loofah (~> 2.2.1)
   lumberyak!
+  rails-html-sanitizer (~> 1.0.4)
   railties (= 4.2.7.1)
   rspec
   rubocop (= 0.49.0)
