@@ -15,8 +15,13 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop', '0.49.0'
 
-  s.add_runtime_dependency 'lograge'
-  s.add_runtime_dependency 'activesupport', '>= 4', '< 5.1'
-  s.add_runtime_dependency 'actionpack',    '>= 4', '< 5.1'
-  s.add_runtime_dependency 'railties',      '>= 4', '< 5.1'
+  s.add_dependency 'lograge'
+  s.add_dependency 'activesupport', '>= 4', '< 5.1'
+  s.add_dependency 'actionpack',    '>= 4', '< 5.1'
+  s.add_dependency 'railties',      '>= 4', '< 5.1'
+  s.add_dependency 'actionview',    '>= 4.2.11.1', '< 5.1'
+
+  s.add_dependency "nokogiri", ">= 1.8.5"
+  s.add_dependency "rack", ">= 1.6.11"
+  s.add_dependency "loofah", ">= 2.2.3"
 end
